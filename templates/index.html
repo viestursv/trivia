@@ -1,0 +1,165 @@
+        <html>
+            <head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>Trivia</title>
+                <script type="text/javascript" src="static/jquery-3.5.1.min.js"></script>
+                <script type="text/javascript" src="static/scripts.js"></script>
+                <link rel="stylesheet" href='/static/style.css' />
+            </head>
+			<body class="no-margin hidden">
+				<!-- MODE SELECT -->
+				<div id="lang-select" class="layout mode-select">
+					<div class="lang-select-container">
+						<button id="en-button" class="btn-eng hidden" onclick="clickSound('home'), viewSelect('mode-select-en')"></button>
+						<button id="de-button" class="btn-de hidden" onclick="clickSound('home'), viewSelect('mode-select-de')"></button>
+					</div>
+				</div>
+				<!-- MODE SELECT EN -->
+				<div id="mode-select-en" class="layout mode-select">
+					<div class="mode-select-container">
+						<button id="btn-hard-en" class="btn-hard hidden" onclick="clickSound('home'), viewSelect('hard-mode-en')"></button>
+						<button id="btn-easy-en" class="btn-easy hidden" onclick="clickSound('home'), viewSelect('easy-mode-en')"></button>
+					</div>
+				</div>
+				<!-- MODE SELECT DE -->
+				<div id="mode-select-de" class="layout mode-select">
+					<div class="mode-select-container">
+						<button id="btn-hard-de" class="btn-hard hidden" onclick="clickSound('home'), viewSelect('hard-mode-de')"></button>
+						<button id="btn-easy-de" class="btn-easy hidden" onclick="clickSound('home'), viewSelect('easy-mode-de')"></button>
+					</div>
+				</div>
+
+				<!-- HARD MODE EN -->
+				<div id ="hard-mode-en" class="layout hidden">
+					<div class="button-array">
+						<!-- For loop logic of jinja template -->
+						{%for i in range(0, 6)%} 
+							
+							<div class="button-row">
+								
+								{%for j in range(1, 7)%} 
+									
+									<button class="btn-quiz" id="{{6*i + j}}" onclick="clickSound('36btn'), guessBuilding(this.id, 'hard-mode-en')">{{6*i + j}}</button>
+									
+								{%endfor%} 
+
+							</div>
+						{%endfor%} 
+						
+					</div>
+					<div class="quiz-content">
+					</div>
+					<button class="btn-mode-select-quiz" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				
+				<!-- HARD MODE DE -->
+				<div id ="hard-mode-de" class="layout hidden">
+					<div class="button-array">
+						<!-- For loop logic of jinja template -->
+						{%for i in range(0, 6)%} 
+							
+							<div class="button-row">
+								
+								{%for j in range(1, 7)%} 
+									
+									<button class="btn-quiz" id="{{6*i + j}}" onclick="clickSound('36btn'), guessBuilding(this.id, 'hard-mode-de')">{{6*i + j}}</button>
+									
+								{%endfor%} 
+
+							</div>
+						{%endfor%} 
+						
+					</div>
+					<div class="quiz-content">
+					</div>
+					<button class="btn-mode-select-quiz" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+
+				<!-- EASY MODE EN -->
+				<div id="easy-mode-en" class="layout hidden">
+					<div class="button-array">
+						<!-- For loop logic of jinja template -->
+						{%for i in range(0, 6)%} 
+							
+							<div class="button-row">
+								
+								{%for j in range(1, 7)%} 
+									
+									<button class="btn-quiz-easy" id="{{6*i + j}}" onclick="clickSound('36btn'), guessBuilding(this.id, 'easy-mode-en')">{{6*i + j}}</button>
+									
+								{%endfor%} 
+
+							</div>
+						{%endfor%} 
+					
+					</div>
+					<div class="quiz-content">
+					</div>
+					<button class="btn-mode-select-quiz" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				
+				<!-- EASY MODE DE -->
+				<div id="easy-mode-de" class="layout hidden">
+					<div class="button-array">
+						<!-- For loop logic of jinja template -->
+						{%for i in range(0, 6)%} 
+							
+							<div class="button-row">
+								
+								{%for j in range(1, 7)%} 
+									
+									<button class="btn-quiz-easy" id="{{6*i + j}}" onclick="clickSound('36btn'), guessBuilding(this.id, 'easy-mode-de')">{{6*i + j}}</button>
+									
+								{%endfor%} 
+
+							</div>
+						{%endfor%} 
+					
+					</div>
+					<div class="quiz-content">
+					</div>
+					<button class="btn-mode-select-quiz" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				
+				<!-- CORRECT EN -->
+				<div id="correct-en" class="layout hidden"></div>
+				<!-- WRONG EN -->
+				<div id="wrong-en" class="layout hidden"></div>
+				<!-- CORRECT DE -->
+				<div id="correct-de" class="layout hidden"></div>
+				<!-- WRONG DE -->
+				<div id="wrong-de" class="layout hidden"></div>
+				<!-- RESULT EN-->
+				<div id="results-0-1-en" class="layout hidden">
+					<button class="btn-mode-select-results" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				<div id="results-2-3-en" class="layout hidden">
+					<button class="btn-mode-select-results" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				<div id="results-4-5-en" class="layout hidden">
+					<button class="btn-mode-select-results" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				<div id="results-6-en" class="layout hidden">
+					<button class="btn-mode-select-results-6" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				<!-- RESULT DE-->
+				<div id="results-0-1-de" class="layout hidden">
+					<button class="btn-mode-select-results" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				<div id="results-2-3-de" class="layout hidden">
+					<button class="btn-mode-select-results" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				<div id="results-4-5-de" class="layout hidden">
+					<button class="btn-mode-select-results" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				<div id="results-6-de" class="layout hidden">
+					<button class="btn-mode-select-results-6" onclick="viewSelect('lang-select'), resetGame()"></button>
+				</div>
+				<div class="scoreboard-container hidden">
+					<div id="score-C" class="score-correct"></div>
+					<div id="score-W" class="score-wrong"></div>
+				</div>
+				
+			</body>
+        </html>

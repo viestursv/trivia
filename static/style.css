@@ -1,0 +1,310 @@
+@font-face {
+  font-family: arial;
+  src: url("assets/fonts/arial.ttf");
+}
+html {
+	background-color:black;
+	user-select: none;
+}
+body {
+	overflow: hidden
+}
+.layout {
+		/*background-color: #10087f;*/
+		/* Used if the image is unavailable */
+		height: 100vh;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	#lang-select {
+		background-image: url("assets/backgrounds/lang_select.jpg");
+	}
+	/* DE language backgrounds*/
+	#mode-select-de {
+		background-image: url("assets/backgrounds/first_page-de.jpg");
+	}
+	#hard-mode-de {
+		background-image: url("assets/backgrounds/hard_mode-de.jpg");
+	}
+	#easy-mode-de {
+		background-image: url("assets/backgrounds/easy_mode-de.jpg");
+	}
+	#correct-de {
+		background-image: url("assets/backgrounds/correct-de.jpg");
+	}
+	#wrong-de {
+		background-image: url("assets/backgrounds/wrong-de.jpg");
+	}
+	#results-0-1-de {
+		background-image: url("assets/backgrounds/0-1-correct-de.jpg");
+	}
+	#results-2-3-de {
+		background-image: url("assets/backgrounds/2-3-correct-de.jpg");
+	}
+	#results-4-5-de {
+		background-image: url("assets/backgrounds/4-5-correct-de.jpg");
+	}
+	#results-6-de {
+		background-image: url("assets/backgrounds/victory-de.jpg");
+	}
+	/* EN language backgrounds*/
+	#mode-select-en {
+		background-image: url("assets/backgrounds/first_page-en.jpg");
+	}
+	#hard-mode-en {
+		background-image: url("assets/backgrounds/hard_mode-en.jpg");
+	}
+	#easy-mode-en {
+		background-image: url("assets/backgrounds/easy_mode-en.jpg");
+	}
+	#correct-en {
+		background-image: url("assets/backgrounds/correct-en.jpg");
+	}
+	#wrong-en {
+		background-image: url("assets/backgrounds/wrong-en.jpg");
+	}
+	#results-0-1-en {
+		background-image: url("assets/backgrounds/0-1-correct-en.jpg");
+	}
+	#results-2-3-en {
+		background-image: url("assets/backgrounds/2-3-correct-en.jpg");
+	}
+	#results-4-5-en {
+		background-image: url("assets/backgrounds/4-5-correct-en.jpg");
+	}
+	#results-6-en {
+		background-image: url("assets/backgrounds/victory-en.jpg");
+	}
+	.quiz-content {
+		position: absolute;
+		top: 20%;
+		right: 150px;
+		height: 65%;
+		width: 35%;
+		background-color: rgba(50, 50, 50, 0);
+		border-width: 0px;
+		text-align: center;
+	}
+	.content {
+		margin-top:25%;
+		color:black
+	}
+	.no-margin {
+		margin: 0px
+	}
+	/* MODE SELECT */
+	.mode-select-container {
+	  position: fixed;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  margin-top:10%
+	}
+	.lang-select-container {
+	  position: fixed;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  margin-top:12%
+	}
+	.btn-eng {
+		background:  url("assets/buttons/lang_select_eng.png");
+		background-size: cover; /* Resize the background image to cover the entire container */
+		cursor:pointer;
+		border: none;
+		height: 150px;
+		width: 150px;
+		border-radius: 50%;
+		border-width: 0px;
+		margin: 0px 30px
+	}
+	.btn-de {
+		background:  url("assets/buttons/lang_select_de.png");
+		background-size: cover; /* Resize the background image to cover the entire container */
+		cursor:pointer;
+		border: none;
+		height: 150px;
+		width: 150px;
+		border-radius: 50%;
+		border-width: 0px;
+		margin: 0px 30px
+	}
+	.btn-eng:focus, .btn-eng:active, .btn-de:focus, .btn-de:active  {
+		outline: 0;
+	    border: none;
+		-moz-outline-style: none;
+	}
+	#btn-hard-en {
+		background:  url("assets/buttons/hard-up-en.png");
+		background-size: cover; /* Resize the background image to cover the entire container */
+		cursor:pointer;
+		border: none;
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		border-width: 0px;
+		margin: 0px 50px
+	}
+	 #btn-hard-en:focus, #btn-hard-en:active {
+		background:  url("assets/buttons/hard-down-en.png");
+		background-size: cover;
+		outline: 0;
+	    border: none;
+		-moz-outline-style: none;
+	}
+	#btn-hard-de {
+		background:  url("assets/buttons/SchwerUP.png");
+		background-size: cover; /* Resize the background image to cover the entire container */
+		cursor:pointer;
+		border: none;
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		border-width: 0px;
+		margin: 0px 50px
+	}
+	#btn-hard-de:focus, #btn-hard-de:active {
+		background:  url("assets/buttons/SchwerDown.png");
+		background-size: cover;
+		outline: 0;
+	    border: none;
+		-moz-outline-style: none;
+	}
+	#btn-easy-en {
+		background:  url("assets/buttons/easy-up-en.png");
+		background-size: cover;
+		cursor:pointer;
+		border: none;
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		border-width: 0px;
+		margin: 0px 50px
+	}
+	#btn-easy-en:focus, #btn-easy-en:active {		
+		background:  url("assets/buttons/easy-down-en.png");
+		background-size: cover;
+		outline: 0;
+	    border: none;
+		-moz-outline-style: none;
+	}
+	#btn-easy-de {
+		background:  url("assets/buttons/LeichtUp.png");
+		background-size: cover;
+		cursor:pointer;
+		border: none;
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		border-width: 0px;
+		margin: 0px 50px
+	}
+	#btn-easy-de:focus, #btn-easy-de:active {		
+		background:  url("assets/buttons/LeichtDown.png");
+		background-size: cover;
+		outline: 0;
+	    border: none;
+		-moz-outline-style: none;
+	}
+	/* HARD MODE */
+	.button-array {
+		width: 50%;
+		padding-left: 120px;
+		padding-top: 230px;
+	}
+	.btn-quiz {
+		height: 100px;
+		width: 100px;
+		margin-right: 28px;
+		margin-bottom: 30px;
+		border-width: 0px;
+		border-radius: 12%;
+		font-family: arial;
+		font-size: 50px;
+		font-weight: bold;
+		color: red;
+		background-color:white;
+	}
+	.btn-quiz-easy {
+		height: 100px;
+		width: 100px;
+		margin-right: 28px;
+		margin-bottom: 30px;
+		border-width: 0px;
+		border-radius: 12%;
+		font-family: arial;
+		font-size: 50px;
+		font-weight: bold;
+		color: white;
+		background-color:black;
+	}
+	/* RESULTS */
+	.btn-mode-select-results {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: 900px;
+		background-color: rgba(50, 50, 50, 0);
+		border-width: 0px;
+		height: 100px;
+		bottom: 80px;
+	}
+
+	.btn-mode-select-results-6 {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: 900px;
+		background-color: rgba(50, 50, 50, 0);
+		border-width: 0px;
+		height: 100px;
+		bottom: 45px;
+	}
+	.btn-mode-select-results:active,
+	.btn-mode-select-results:focus,
+	.btn-mode-select-results-6:active,
+	.btn-mode-select-results-6:focus,
+	.btn-mode-select-quiz:active,
+	.btn-mode-select-quiz:focus {
+		outline: 0;
+	    border: none;
+		-moz-outline-style: none;
+	}
+	    
+	.btn-mode-select-quiz {
+		position: absolute;
+		right: 15%;
+		width: 360px;
+		background-color: rgba(50, 50, 50, 0);
+		border-width: 0px;
+		height: 80px;
+		bottom: 55px;
+	}
+	.hidden {
+		display:none;
+	}
+	.scoreboard-container {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-weight: bold;
+		font-family: arial;
+		font-size: 180px;
+		padding-bottom: 20px;
+		width:530px;
+	}
+	.score-correct {
+	    width: 100px;
+		float: left;
+		color: royalblue
+    }
+    .score-wrong {
+		margin-left: 420px;
+		color: red
+    }
